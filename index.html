@@ -47,7 +47,7 @@ ajax_get(api_url, function(data) {
     document.getElementById("id").innerHTML = "Image ID: "+data[0]["id"];
 
     var html = '<img src="' + data[0]["url"] + '">';
-    document.getElementById("image").innerHTML = html;
+    document.getElementById("rip").innerHTML = html;
 });
     </script>
 
@@ -131,7 +131,7 @@ ajax_get(api_url, function(data) {
                 <br>O meu chá
             </mark>
         </p>
-        <div id="image"></div>
+        <div id="rip"></div>
   <!--      <img src="https://api.thedogapi.com/v1/images/search?format=src&size=full&mime_types=gif&api_key=45f26957-c21b-4a54-8158-c6426b0b889a">
   --> 
       </center>
