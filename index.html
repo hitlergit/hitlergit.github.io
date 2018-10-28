@@ -42,7 +42,7 @@
             document.getElementById("id").innerHTML = "Image ID: " + data[0]["id"];
 
             var html = '<img src="' + data[0]["url"] + '">';
-            document.getElementById("rip").innerHTML = html;
+            document.getElementById("image").innerHTML = html;
         });
     </script>
     <title>O meu chá</title>
@@ -52,8 +52,8 @@
     <audio autoplay loop>
         <source src="music/omeucha.mp3" type="audio/mpeg">
     </audio>
-    <div id=rip>
-    </div>
+    <div id="id"></div>
+    <div id="image"></div>
     <center>
         <h1><mark>
                 <a href="https://youtu.be/WWr3wU26gZk">
