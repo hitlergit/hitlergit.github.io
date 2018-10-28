@@ -39,7 +39,7 @@
 
 
         ajax_get(api_url, function (data) {
-            document.getElementById("id").innerHTML = "Image ID: " + data[0]["id"];
+            //document.getElementById("id").innerHTML = "Image ID: " + data[0]["id"];
 
             var html = '<img src="' + data[0]["url"] + '">';
             document.getElementById("image").innerHTML = html;
@@ -50,7 +50,6 @@
 
 
 <body>
-    <div id="id"></div>
     <div id="image"></div>
     <audio autoplay loop>
         <source src="music/omeucha.mp3" type="audio/mpeg">
