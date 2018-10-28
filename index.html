@@ -35,8 +35,6 @@
 
         var api_url = 'https://api.thedogapi.com/v1/images/search?'
         api_url += "mime_types=gif"
-        api_url += "45f26957-c21b-4a54-8158-c6426b0b889a"
-
 
         ajax_get(api_url, function (data) {
             var html = '<img src="' + data[0]["url"] + '">';
@@ -48,7 +46,7 @@
 
 
 <body>
-    <div id="image"></div>
+    <div align=center id="image"></div>
     <audio autoplay loop>
         <source src="music/omeucha.mp3" type="audio/mpeg">
     </audio>
