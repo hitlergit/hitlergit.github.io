@@ -15,44 +15,45 @@
     </style>
     <script>
         function ajax_get(url, callback) {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            console.log('responseText:' + xmlhttp.responseText);
-            try {
-                var data = JSON.parse(xmlhttp.responseText);
-            } catch(err) {
-                console.log(err.message + " in " + xmlhttp.responseText);
-                return;
-            }
-            callback(data);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    console.log('responseText:' + xmlhttp.responseText);
+                    try {
+                        var data = JSON.parse(xmlhttp.responseText);
+                    } catch (err) {
+                        console.log(err.message + " in " + xmlhttp.responseText);
+                        return;
+                    }
+                    callback(data);
+                }
+            };
+
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
         }
-    };
 
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-}
-
-var api_url = 'https://api.thedogapi.com/v1/images/search?'
-api_url += "mime_types=gif"
-//api_url += "45f26957-c21b-4a54-8158-c6426b0b889a"
+        var api_url = 'https://api.thedogapi.com/v1/images/search?'
+        api_url += "mime_types=gif"
+        //api_url += "45f26957-c21b-4a54-8158-c6426b0b889a"
 
 
-ajax_get(api_url, function(data) {
-    document.getElementById("id").innerHTML = "Image ID: "+data[0]["id"];
+        ajax_get(api_url, function (data) {
+            document.getElementById("id").innerHTML = "Image ID: " + data[0]["id"];
 
-    var html = '<img src="' + data[0]["url"] + '">';
-    document.getElementById("rip").innerHTML = html;
-});
+            var html = '<img src="' + data[0]["url"] + '">';
+            document.getElementById("rip").innerHTML = html;
+        });
     </script>
     <title>O meu chá</title>
 </head>
 
 <body>
-   <audio autoplay loop>
+    <audio autoplay loop>
         <source src="music/omeucha.mp3" type="audio/mpeg">
     </audio>
-    <div=rip></div>:
+    <div id=rip>
+    </div>
     <center>
         <h1><mark>
                 <a href="https://youtu.be/WWr3wU26gZk">
@@ -129,10 +130,10 @@ ajax_get(api_url, function(data) {
                 <br>O meu lanche
                 <br>O meu chá
             </mark>
-        </p>  
-  <!--      <img src="https://api.thedogapi.com/v1/images/search?format=src&size=full&mime_types=gif&api_key=45f26957-c21b-4a54-8158-c6426b0b889a">
-  --> 
-      </center>
+        </p>
+        <!--      <img src="https://api.thedogapi.com/v1/images/search?format=src&size=full&mime_types=gif&api_key=45f26957-c21b-4a54-8158-c6426b0b889a">
+  -->
+    </center>
 </body>
 
 </html>
