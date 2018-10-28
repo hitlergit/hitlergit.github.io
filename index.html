@@ -35,12 +35,10 @@
 
         var api_url = 'https://api.thedogapi.com/v1/images/search?'
         api_url += "mime_types=gif"
-        //api_url += "45f26957-c21b-4a54-8158-c6426b0b889a"
+        api_url += "45f26957-c21b-4a54-8158-c6426b0b889a"
 
 
         ajax_get(api_url, function (data) {
-            //document.getElementById("id").innerHTML = "Image ID: " + data[0]["id"];
-
             var html = '<img src="' + data[0]["url"] + '">';
             document.getElementById("image").innerHTML = html;
         });
