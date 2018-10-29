@@ -18,6 +18,7 @@ function ajax_get(url, callback) {
 }
 
 var api_url = 'https://api.thedogapi.com/v1/images/search?'
+api_url += "size=small&"
 api_url += "mime_types=gif"
 
 ajax_get(api_url, function (data) {
