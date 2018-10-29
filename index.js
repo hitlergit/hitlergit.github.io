@@ -26,5 +26,8 @@ ajax_get(api_url, function (data) {
 });
 
 function cavacoToggle() {
-    document.body.style.backgroundImage = "url('images/cavaco_animated.gif'), url('images/rainbow.gif')";
+    ajax_get(api_url, function (data) {
+        var html = '<img src="' + data[0]["url"] + '">';
+        document.getElementById("image").innerHTML = html;
+    });
 }
